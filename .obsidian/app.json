@@ -1,0 +1,14 @@
+{
+  "alwaysUpdateLinks": true,
+  "newFileLocation": "folder",
+  "newFileFolderPath": "Topics",
+  "attachmentFolderPath": "assets",
+  "promptDelete": false,
+  "readableLineLength": false,
+  "showLineNumber": false,
+  "spellcheck": false,
+  "tabSize": 2,
+  "useMarkdownLinks": false,
+  "useTab": false,
+  "vimMode": false
+}

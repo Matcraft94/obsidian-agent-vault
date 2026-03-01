@@ -1,0 +1,19 @@
+# Obsidian workspace and cache
+workspace.json
+workspace-mobile.json
+workspace*
+cache/
+
+# Obsidian sync
+.obsidian/plugins/obsidian-sync/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+
+# Node modules (if using custom plugins)
+node_modules/

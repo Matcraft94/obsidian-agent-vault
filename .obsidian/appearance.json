@@ -1,0 +1,12 @@
+{
+  "accentColor": "#00d4aa",
+  "baseFontSize": 16,
+  "cssTheme": "",
+  "interfaceFontFamily": "",
+  "monospaceFontFamily": "JetBrains Mono, Fira Code, Consolas",
+  "nativeMenus": false,
+  "showViewHeader": true,
+  "textFontFamily": "",
+  "theme": "obsidian",
+  "translucency": false
+}

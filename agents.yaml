@@ -1,0 +1,128 @@
+# Agent Configuration for Aurora-GLM
+# FORCE: Vault interaction is MANDATORY
+
+project:
+  name: "Aurora-GLM"
+  type: "Python Statistical Library"
+  description: "GLM, GAM, GAMM with R integration"
+  
+vault:
+  path: "D:\WSL-Projects\Obsidian+Claude\Aurora-GLM"
+  required: true
+  auto_detect: true
+  
+  # Mandatory files to read on EVERY session
+  required_reading:
+    - "AGENTS.md"
+    - "CLAUDE.md"
+    - "README.md"
+    - "CHANGELOG.md"
+  
+  # Skills to use for vault interaction
+  skills:
+    primary:
+      - "obsidian-vault-querier"    # Query and search
+      - "vault-knowledge"           # Read + Write cycle
+      - "vault-reader"              # Efficient reading
+      - "vault-writer"              # Note creation
+      - "vault-optimizer"           # Structure optimization
+    
+    secondary:
+      - "aurora-glm"                # Statistical modeling
+      - "aurora-math"               # Mathematical operations
+      - "aurora-testing"            # Testing strategies
+      - "writing-plans"             # Plan creation
+      - "executing-plans"           # Plan execution
+
+# Workflow Enforcement
+workflow:
+  # BEFORE any work
+  pre_work:
+    - "Read AGENTS.md from vault"
+    - "Check latest Daily Notes"
+    - "Search relevant statistical topics"
+    - "Review Implementation Progress"
+  
+  # DURING work
+  during_work:
+    - "Document algorithms in Topics/"
+    - "Link to mathematical concepts"
+    - "Update statistical models MOC"
+    - "Create Daily Note entries"
+  
+  # BEFORE commit (CRITICAL)
+  pre_commit:
+    - "Document new models in vault"
+    - "Update algorithm topics"
+    - "Add benchmarks to vault"
+    - "Update Implementation Progress"
+    - "Commit vault changes FIRST"
+    - "Commit repo changes SECOND"
+
+# Agent Specialization
+agents:
+  vault_querier:
+    role: "Query vault for statistical information"
+    skill: "obsidian-vault-querier"
+    triggers:
+      - "busca en el vault"
+      - "search vault"
+      - "find model"
+      - "query algorithm"
+    
+  vault_writer:
+    role: "Write statistical knowledge to vault"
+    skill: "vault-writer"
+    triggers:
+      - "document model"
+      - "add algorithm"
+      - "create topic"
+      - "update MOC"
+    
+  statistical_researcher:
+    role: "Research statistical methods"
+    skill: "aurora-glm"
+    triggers:
+      - "GLM"
+      - "GAM"
+      - "GAMM"
+      - "mixed models"
+      - "REML"
+
+# Synchronization Rules
+sync:
+  repo_to_vault:
+    - event: "new_model"
+      action: "Create topic in Topics/"
+    - event: "benchmark_results"
+      action: "Update Performance MOC"
+    - event: "algorithm_implementation"
+      action: "Document in Topics/ + Link to MOC"
+    - event: "bug_fix"
+      action: "Daily Note + BUG topic if critical"
+  
+  vault_to_repo:
+    - event: "research_algorithm"
+      action: "Add to implementation notes"
+    - event: "mathematical_insight"
+      action: "Update docstrings"
+    - event: "test_strategy"
+      action: "Update test files"
+
+# Statistical Focus Areas
+focus_areas:
+  - "GLM - Generalized Linear Models"
+  - "GAM - Generalized Additive Models"
+  - "GAMM - Generalized Additive Mixed Models"
+  - "REML - Restricted Maximum Likelihood"
+  - "R integration via rpy2"
+  - "Numerical optimization"
+
+# Forbidden Actions
+forbidden:
+  - "Commit without reading vault"
+  - "Create duplicate topics"
+  - "Leave topics without wiki-links"
+  - "Create subfolders in Topics/"
+  - "Skip mathematical documentation"
+  - "Forget to link to related models"
