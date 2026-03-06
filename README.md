@@ -1,5 +1,9 @@
 # Obsidian Vault Template - Bilingual
 
+![Version](https://img.shields.io/badge/version-1.0.0-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
+![Status](https://img.shields.io/badge/status-stable-brightgreen)
+
 Bilingual template (Spanish/English) for code and research projects with multi-agent support.
 
 ## 🚀 Quick Start
@@ -93,6 +97,7 @@ See [[Sync Checklist]] template for details.
 
 ---
 
-**Created by:** Lucy + Claude Code + Kimi CLI + OpenCode 
-**Version:** 2.0  
-**Date:** 2026-03-05
+**Created by:** Lucy + Claude Code + Kimi CLI + OpenCode  
+**Version:** 1.0.0  
+**Date:** 2026-03-05  
+**License:** MIT
