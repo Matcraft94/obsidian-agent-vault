@@ -1,0 +1,21 @@
+# Obsidian
+.obsidian/workspace
+.obsidian/cache
+.obsidian/plugins/*/data.json
+
+# Release notes (for GitHub only, not repo)
+RELEASE_NOTES.md
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temporary files
+*.tmp
+*.temp
