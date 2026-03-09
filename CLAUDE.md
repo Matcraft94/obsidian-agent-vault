@@ -208,4 +208,67 @@ docker-compose exec frontend npm run format
 
 ---
 
-*Actualizado: YYYY-MM-DD*
+## 🐝 Swarm Protocol (MANDATORY)
+
+### When to Use Swarm (Minimum 3 agents)
+Use parallel agents when:
+- [ ] Creating/updating MOCs
+- [ ] Adding new features
+- [ ] Verifying documentation vs code
+- [ ] Counting tests across codebase
+- [ ] Any task touching vault + code simultaneously
+
+### Standard Swarm Compositions
+
+| Task Type | Agent 1 | Agent 2 | Agent 3 | Agent 4 | Agent 5 |
+|-----------|---------|---------|---------|---------|---------|
+| Feature Documentation | backend | frontend | database | testing | vault_keeper |
+| Verification | backend | database | architecture | testing | api_docs |
+| Test Counting | backend | testing | - | - | - |
+| Architecture Decision | backend | database | vault_keeper | - | - |
+
+### Swarm Coordination Protocol
+1. **Launch**: All agents simultaneously with Task tool
+2. **Work**: Each agent works independently on their domain
+3. **Consolidate**: Main agent merges findings into single report
+4. **Validate**: Cross-check findings between agents
+5. **Update**: Vault updated based on consolidated report ONLY
+6. **Commit**: All vault changes committed together
+
+### Forbidden Patterns
+❌ Never update vault based on single agent output
+❌ Never skip consolidation step
+❌ Never mix code repo commits with vault commits
+
+---
+
+## 📋 Documentation Synchronization Rules
+
+### Zero Documentation Drift Policy
+Before marking ANY task as "complete":
+- [ ] Code implemented and tested
+- [ ] Tests actually exist (verified with test runner)
+- [ ] Wiki-links validated (run validation script)
+- [ ] Topics created for new functionality
+- [ ] ADRs updated for architectural decisions
+- [ ] Documentation test counts verified
+
+### Required Verification Commands
+```bash
+# 1. Verify tests exist
+test_runner --collect-only
+
+# 2. Validate wiki-links
+./scripts/validate-links.sh
+
+# 3. Count actual tests
+./scripts/count-tests.sh
+
+# 4. Check vault status
+cd /path/to/vault
+git status
+```
+
+---
+
+*Last updated: 2026-03-08*
