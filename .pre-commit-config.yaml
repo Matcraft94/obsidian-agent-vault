@@ -1,0 +1,120 @@
+# =============================================================================
+# Pre-commit Configuration for Obsidian Vault Template
+# =============================================================================
+# Install: pip install pre-commit
+# Setup: pre-commit install
+# Run manually: pre-commit run --all-files
+# =============================================================================
+
+default_stages: [pre-commit, commit-msg]
+
+repos:
+  # Standard hooks
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: trailing-whitespace
+        name: Trim trailing whitespace
+        args: [--markdown-linebreak-ext=md]
+      
+      - id: end-of-file-fixer
+        name: Fix end of files
+      
+      - id: check-yaml
+        name: Check YAML syntax
+        args: [--allow-multiple-documents]
+      
+      - id: check-json
+        name: Check JSON syntax
+      
+      - id: check-toml
+        name: Check TOML syntax
+      
+      - id: check-added-large-files
+        name: Check for large files
+        args: [--maxkb=1000]
+      
+      - id: check-merge-conflict
+        name: Check for merge conflicts
+      
+      - id: check-case-conflict
+        name: Check for case conflicts
+      
+      - id: mixed-line-ending
+        name: Fix line endings
+        args: [--fix=lf]
+      
+      - id: detect-private-key
+        name: Detect private keys
+
+  # Markdown linting
+  - repo: https://github.com/DavidAnson/markdownlint-cli2
+    rev: v0.12.1
+    hooks:
+      - id: markdownlint-cli2
+        name: Markdown linting
+        args:
+          - --config
+          - .markdownlint.json
+        files: \.(md|mdx)$
+        exclude: |
+          (?x)^(
+            .obsidian/|
+            node_modules/|
+            dist/|
+            build/
+          )
+
+  # YAML linting
+  - repo: https://github.com/adrienverge/yamllint
+    rev: v1.33.0
+    hooks:
+      - id: yamllint
+        name: YAML linting
+        args: [-c=.yamllint.yml]
+        files: \.(yml|yaml)$
+
+  # Custom wiki-link validator
+  - repo: local
+    hooks:
+      - id: validate-wiki-links
+        name: Validate wiki-links
+        entry: bash scripts/validate-links.sh --quiet
+        language: system
+        pass_filenames: false
+        always_run: true
+        stages: [pre-commit]
+
+  # Test counter check
+  - repo: local
+    hooks:
+      - id: count-tests
+        name: Check test counts
+        entry: bash scripts/count-tests.sh --quiet
+        language: system
+        pass_filenames: false
+        always_run: true
+        stages: [pre-commit]
+
+  # Vault structure validation
+  - repo: local
+    hooks:
+      - id: check-vault-structure
+        name: Check vault structure
+        entry: bash scripts/check-structure.sh
+        language: system
+        pass_filenames: false
+        always_run: true
+        stages: [pre-commit]
+
+# Exclude patterns
+exclude: |
+  (?x)^(
+    .git/|
+    .obsidian/|
+    node_modules/|
+    dist/|
+    build/|
+    \.lock$|
+    \.min\.(js|css)$
+  )
