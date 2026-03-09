@@ -221,6 +221,108 @@ docker-compose exec frontend npm run format
 
 ---
 
+---
+
+## 🐝 Protocolo de Enjambre (OBLIGATORIO)
+
+### Cuándo Usar Enjambre (Mínimo 3 Agentes)
+
+- [ ] Crear/actualizar MOCs
+- [ ] Agregar nuevas funcionalidades
+- [ ] Verificar documentación vs código
+- [ ] Contar tests en todo el codebase
+- [ ] Cualquier tarea que toque vault + código simultáneamente
+
+### Composiciones Estándar del Enjambre
+
+| Tipo de Tarea | Agente 1 | Agente 2 | Agente 3 | Agente 4 | Agente 5 |
+|---------------|----------|----------|----------|----------|----------|
+| Documentación de Features | backend | frontend | database | testing | vault_keeper |
+| Verificación | backend | database | architecture | testing | api_docs |
+| Conteo de Tests | backend | testing | - | - | - |
+| Decisión Arquitectural | backend | database | vault_keeper | - | - |
+
+### Protocolo de Coordinación del Enjambre
+
+1. **Lanzamiento:** Todos los agentes trabajan simultáneamente con Task tool
+2. **Trabajo:** Cada agente trabaja independientemente en su dominio
+3. **Consolidación:** El agente principal fusiona los hallazgos en un único reporte
+4. **Validación:** Verificación cruzada de hallazgos entre agentes
+5. **Actualización:** El vault se actualiza basado ÚNICAMENTE en el reporte consolidado
+6. **Commit:** Todos los cambios del vault se commitean juntos
+
+### Patrones Prohibidos
+
+❌ Nunca actualizar el vault basándose en la salida de un solo agente  
+❌ Nunca omitir el paso de consolidación  
+❌ Nunca mezclar commits del repo de código con commits del vault  
+
+---
+
+## 📋 Reglas de Sincronización de Documentación (CRÍTICO)
+
+### Regla 1: Política de Deriva Cero
+
+Antes de marcar CUALQUIER tarea como "completa":
+- [ ] Código implementado y probado
+- [ ] Tests realmente existen (verificado con `pytest --collect-only`)
+- [ ] Wiki-links validados (apuntan a archivos existentes)
+- [ ] Topics creados para nueva funcionalidad
+- [ ] ADRs actualizados para decisiones arquitecturales
+- [ ] CLAUDE.md con conteos de tests verificados y actualizados
+
+### Regla 2: Verificar Antes de Linkear
+
+Cada wiki-link `[[...]]` DEBE apuntar a un archivo existente.  
+Validación: Ejecutar `./scripts/check-links.sh` antes de commitear.
+
+### Regla 3: Fuente Única de Verdad para Métricas
+
+Los conteos de tests NUNCA deben estar hardcodeados.  
+Fuentes:
+- Backend: `./scripts/count-tests.sh`
+- Frontend: `npm run test:unit`
+- E2E: `find e2e -name "*.spec.ts" | wc -l`
+
+### Regla 4: Decisión → ADR Primero
+
+Ninguna decisión arquitectural puede implementarse sin ADR previo.  
+Requerido: Contexto, Decisión, Consecuencias (+/-)
+
+### Regla 5: Enjambre Obligatorio
+
+Para CUALQUIER cambio que afecte documentación:
+- Mínimo 3 agentes especializados en paralelo
+- Consolidar hallazgos ANTES de actualizar vault
+- Nunca actualizar vault basado en salida de agente único
+
+### Regla 6: Test de Integración Obligatorio
+
+Todos los nuevos endpoints requieren test HTTP 200 antes de marcar completo.
+
+---
+
+## 🔍 Checklist de Verificación (Pre-Commit)
+
+### Antes de marcar cualquier tarea como completa:
+
+```bash
+# 1. Verificar que los tests existen
+pytest --collect-only -k "<test_pattern>"
+
+# 2. Validar wiki-links
+./scripts/check-links.sh
+
+# 3. Contar tests reales
+./scripts/count-tests.sh
+
+# 4. Verificar estado del vault
+cd [RUTA_DEL_VAULT]
+git status
+```
+
+---
+
 ## Recursos
 
 - Documentación: [URL o ruta]
@@ -230,4 +332,4 @@ docker-compose exec frontend npm run format
 
 ---
 
-*Actualizado: YYYY-MM-DD*
+*Actualizado: 2026-03-08*

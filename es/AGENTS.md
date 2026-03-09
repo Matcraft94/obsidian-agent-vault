@@ -398,6 +398,116 @@ Get-ChildItem "Daily Notes\" | Select-Object -Last 5
 
 ---
 
+## 📋 Reglas de Sincronización de Documentación (CRÍTICO)
+
+### Regla 1: Política de Deriva Cero de Documentación
+
+Antes de marcar CUALQUIER tarea como "completa":
+- [ ] Código implementado y probado
+- [ ] Tests realmente existen (verificado con `pytest --collect-only`)
+- [ ] Wiki-links validados (apuntan a archivos existentes)
+- [ ] Topics creados para nueva funcionalidad
+- [ ] ADRs actualizados para decisiones arquitectónicas
+- [ ] AGENTS.md con conteos de tests verificados y actualizados
+
+### Regla 2: Verificar Antes de Enlazar
+
+Cada wiki-link `[[...]]` DEBE apuntar a un archivo existente.
+Validación: Ejecutar `./scripts/check-links.sh` antes del commit.
+
+### Regla 3: Fuente Única de Verdad para Métricas
+
+Los conteos de tests NUNCA deben estar hardcodeados.
+Fuentes:
+- Backend: `./scripts/count-tests.sh`
+- Frontend: `npm run test:unit`
+- E2E: `find e2e -name "*.spec.ts" | wc -l`
+
+### Regla 4: Decisión → ADR Primero
+
+Ninguna decisión arquitectónica puede implementarse sin ADR previo.
+Requerido: Contexto, Decisión, Consecuencias (+/-)
+
+### Regla 5: Enjambre de Agentes Obligatorio
+
+Para CUALQUIER cambio que afecte documentación:
+- Mínimo 3 agentes especializados en paralelo
+- Consolidar hallazgos ANTES de actualizar vault
+- Nunca actualizar vault basado en output de un solo agente
+
+### Regla 6: Prueba de Integración Obligatoria
+
+Todos los nuevos endpoints requieren test HTTP 200 antes de marcar como completo.
+
+---
+
+## 🐝 Protocolo de Enjambre para Tareas de Documentación (OBLIGATORIO)
+
+### Cuándo Usar Enjambre (Mínimo 3 agentes)
+
+- [ ] Crear/actualizar MOCs
+- [ ] Agregar nuevas funcionalidades
+- [ ] Verificar documentación vs código
+- [ ] Contar tests en todo el codebase
+- [ ] Cualquier tarea que toque vault + código simultáneamente
+
+### Composiciones Estándar de Enjambre
+
+| Tipo de Tarea | Agente 1 | Agente 2 | Agente 3 | Agente 4 | Agente 5 |
+|---------------|----------|----------|----------|----------|----------|
+| Documentación de Features | backend | frontend | database | testing | vault_keeper |
+| Verificación | backend | database | architecture | testing | api_docs |
+| Conteo de Tests | backend | testing | - | - | - |
+| Decisión Arquitectónica | backend | database | vault_keeper | - | - |
+
+### Protocolo de Coordinación del Enjambre
+
+1. **Lanzamiento** — Todos los agentes simultáneamente con Task tool
+2. **Trabajo** — Cada agente trabaja independientemente en su dominio
+3. **Puntos de Sincronización** — El equipo converge para resolver dependencias
+4. **Ciclo de Revisión** — Revisor valida todos los outputs
+5. **Integración** — Lead sintetiza en solución cohesiva
+6. **Documentación** — Documentarian registra decisiones
+
+### Patrones Prohibidos
+
+❌ Nunca actualizar vault basado en output de un solo agente
+❌ Nunca saltar el paso de consolidación
+❌ Nunca mezclar commits del repo de código con commits del vault
+
+---
+
+## 🔍 Lista de Verificación (Pre-Commit)
+
+### Antes de marcar cualquier tarea como completa:
+
+```bash
+# 1. Verificar que tests existen
+pytest --collect-only -k "<test_pattern>"
+
+# 2. Validar wiki-links
+./scripts/check-links.sh
+
+# 3. Contar tests reales
+./scripts/count-tests.sh
+
+# 4. Verificar estado del vault
+cd /ruta/al/vault
+git status
+```
+
+---
+
+## 📚 Lecciones Aprendidas
+
+Revisar estos archivos al inicio de cada sesión:
+- `.claude/tasks/lessons/documentation.md`
+- `.claude/tasks/lessons/testing.md`
+- `.claude/tasks/lessons/architecture.md`
+- `.claude/tasks/lessons/vault-maintenance.md`
+
+---
+
 ## Contacto / Contexto
 
 - **Autor:** [Tu Nombre]
