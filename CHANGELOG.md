@@ -141,6 +141,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Planned
+- Research project specializations (academic/scientific workflows)
+- Data Science project specializations (ML/AI experiment tracking)
 - Additional templates for specific use cases
-- More language translations (Portuguese, French)
-- Integration with popular IDEs (VS Code extension)
