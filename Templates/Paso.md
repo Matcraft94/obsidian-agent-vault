@@ -29,6 +29,26 @@ paso: {{paso_num}}
 
 ---
 
+## Estado de Tests
+
+| Tipo | Count | Status | Coverage |
+|------|-------|--------|----------|
+| Unit | X | 🟢/🟡/🔴 | XX% |
+| Integration | X | 🟢/🟡/🔴 | XX% |
+| E2E | X | 🟢/🟡/🔴 | XX% |
+
+**Actualizado:** YYYY-MM-DD
+
+---
+
+## Links a ADRs
+
+| ADR | Estado | Relevancia |
+|-----|--------|------------|
+| [[ADR-XXX]] | accepted | Describe decisión relevante |
+
+---
+
 ## Implementación
 
 ### Backend
@@ -53,6 +73,26 @@ paso: {{paso_num}}
 ## Bloqueos / Problemas
 
 - 
+
+---
+
+## Verificación Checklist
+
+- [ ] Código implementado
+- [ ] Tests escritos y pasando
+- [ ] Documentación actualizada
+- [ ] ADRs creados si aplica
+- [ ] Links validados
+
+---
+
+## Métricas
+
+| Métrica | Plan | Actual |
+|---------|------|--------|
+| Días estimados | X | X |
+| Tests añadidos | X | X |
+| Líneas de código | - | X |
 
 ---
 

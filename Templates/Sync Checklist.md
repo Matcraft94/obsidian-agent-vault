@@ -32,24 +32,58 @@ project: {{PROJECT_NAME}}
 
 ## Post-Implementation (Repo → Vault)
 
-### Daily Notes
+### Code
+- [ ] Code implemented
+- [ ] Tests written
+- [ ] Tests passing
+- [ ] Type checking OK
+- [ ] Linting OK
+
+### Documentation
+- [ ] Wiki-links validated (`./scripts/validate-links.sh`)
+- [ ] Topic created (si nuevo concepto)
+- [ ] ADR updated (si decisión arquitectónica)
+- [ ] Daily Note created/updated
+- [ ] MOCs actualizados
+
+### Verification
+- [ ] AGENTS.md test counts verified
+- [ ] Links funcionan (verificar en graph)
+- [ ] No orphan topics
+- [ ] All wiki-links point to existing files
+
+---
+
+## Daily Notes
+
 - [ ] Crear/actualizar índice `YYYY-MM-DD.md`
 - [ ] Detalle creado si es necesario (`YYYY-MM-DD - Feature.md`)
 - [ ] Links a topics/MOCs afectados
+- [ ] Commits registrados
 
-### Topics (si nuevo concepto)
+---
+
+## Topics (si nuevo concepto)
+
 - [ ] Crear en `Topics/` con prefijo categórico
 - [ ] Frontmatter con tags correctos
 - [ ] Links a 2-3+ topics existentes
 - [ ] Extreme brevity (1-2 líneas/sección)
 
-### ADRs (si decisión arquitectónica)
+---
+
+## ADRs (si decisión arquitectónica)
+
 - [ ] Crear en `ADRs/`
 - [ ] Nomenclatura: `ADR-XXX Descripcion.md`
 - [ ] Status: proposed → accepted
 - [ ] Consecuencias documentadas (+/-)
+- [ ] Links a topics relacionados
 
-### MOCs
+---
+
+## MOCs
+
 - [ ] [[Implementation Progress]] actualizado
 - [ ] [[Proyecto - TODOs]] actualizado
 - [ ] [[Architecture Decisions]] (si aplica)
@@ -67,6 +101,8 @@ feat[area]: description
 
 - Cambio 1
 - Cambio 2
+
+Refs: [[Topic relacionado]]
 ```
 
 ### Vault Commit (si vault es repo separado)
@@ -75,17 +111,19 @@ daily: Session log YYYY-MM-DD
 
 - Completed [feature]
 - Updated [MOCs]
+- Created [Topics]
 ```
 
 ---
 
-## Verification
+## Verification Final
 
 - [ ] Repo: Tests pasan CI/CD
 - [ ] Repo: Code review aprobado
 - [ ] Vault: Documentación completa
 - [ ] Vault: Links funcionan (verificar en graph)
 - [ ] Sync: Commit message referencia vault si aplica
+- [ ] Zero documentation drift confirmed
 
 ---
 

@@ -14,15 +14,23 @@ deciders: Equipo técnico
 
 ---
 
-## Contexto
+## Context (Obligatorio)
 
-*¿Qué problema/contexto llevó a esta decisión? 1-2 líneas.*
+¿Qué problema/contexto llevó a esta decisión? 
+
+- Estado actual del sistema
+- Fuerzas/factores que influyen
+- Problemas que necesitan resolución
+- 3-5 líneas máximo
 
 ---
 
-## Decisión
+## Decision (Obligatorio)
 
 **Decisión final:** Descripción concisa de la decisión tomada.
+
+- Qué se decidió hacer
+- Por qué se eligió esta opción
 
 ---
 
@@ -43,23 +51,32 @@ Breve explicación.
 
 ---
 
-## Consecuencias
+## Consecuencias: Positivas ✅
 
-### Positivas ✅
+- Beneficio 1
+- Beneficio 2
+- Beneficio 3
 
-- 
-- 
-- 
+## Consecuencias: Negativas ❌
 
-### Negativas ❌
+- Desventaja 1
+- Desventaja 2
+- Desventaja 3
 
-- 
-- 
-
-### Mitigaciones
+## Mitigaciones
 
 Para las consecuencias negativas:
-- **Problema:** Solución propuesta
+- **Problema 1:** Solución propuesta
+- **Problema 2:** Solución propuesta
+
+---
+
+## Links
+
+- [[Topic relacionado en vault]]
+- [[ADR-YYY: ADR anterior relacionado]]
+- Documentación externa: URL
+- Issue/PR: #XXX
 
 ---
 
@@ -89,16 +106,15 @@ Para las consecuencias negativas:
 
 ## Referencias
 
-- [[Link a topic relacionado en vault]]
-- Documentación externa: URL
-- Issue/PR: #XXX
+- [Link a recurso externo]
+- Documento técnico: URL
 
 ---
 
 ## Revisiones
 
-- **{{date:YYYY-MM-DD}}**: Decisión inicial
-- **YYYY-MM-DD**: Actualización (si aplica)
+- **{{date:YYYY-MM-DD}}**: Decisión inicial (status: proposed)
+- **YYYY-MM-DD**: Actualización (status: accepted)
 
 ---
 

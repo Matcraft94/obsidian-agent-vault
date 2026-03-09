@@ -38,6 +38,26 @@ status: in-progress  # in-progress | completed | blocked
 
 ---
 
+## Estado de Tests
+
+| Tipo | Count | Status | Coverage |
+|------|-------|--------|----------|
+| Unit | X | 🟢/🟡/🔴 | XX% |
+| Integration | X | 🟢/🟡/🔴 | XX% |
+| E2E | X | 🟢/🟡/🔴 | XX% |
+
+**Actualizado:** YYYY-MM-DD
+
+---
+
+## Links a ADRs
+
+| ADR | Estado | Descripción |
+|-----|--------|-------------|
+| [[ADR-XXX]] | accepted | Descripción breve |
+
+---
+
 ## Dependencias
 
 - **Anterior:** [[Fase {{fase_anterior}} - Nombre]]
@@ -60,11 +80,30 @@ status: in-progress  # in-progress | completed | blocked
 
 ---
 
-## Decisiones
+## Verificación Checklist
 
-| Decisión | Estado | ADR | Fecha |
-|----------|--------|-----|-------|
-| - | - | - | - |
+### Pre-cierre
+- [ ] Todos los objetivos completados
+- [ ] Tests pasando (>80% coverage)
+- [ ] Documentación actualizada
+- [ ] ADRs revisados
+- [ ] Links validados
+
+### Post-cierre
+- [ ] Fase marcada como completed
+- [ ] Resumen de cierre completado
+- [ ] Lecciones aprendidas documentadas
+
+---
+
+## Métricas
+
+| Métrica | Plan | Actual | Var |
+|---------|------|--------|-----|
+| Tiempo (días) | X | X | ±X |
+| Tests añadidos | X | X | ±X |
+| Bugs encontrados | - | X | - |
+| Bugs resueltos | - | X | - |
 
 ---
 

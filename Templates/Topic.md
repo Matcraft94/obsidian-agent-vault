@@ -1,5 +1,5 @@
 ---
-tags: [topic]
+tags: [topic, technical]
 status: developing
 created: {{date:YYYY-MM-DD}}
 ---
@@ -7,43 +7,27 @@ created: {{date:YYYY-MM-DD}}
 # {{categoria}} - {{title}}
 
 <!-- 
-CATEGORÍAS PERMITIDAS (prefijo obligatorio):
-- Arquitectura - Patrones, estilos arquitectónicos
-- BD - Base de datos, PostgreSQL, modelos
-- Testing - Tests, estrategias, herramientas
-- Seguridad - RLS, XSS, autenticación
-- Bug - Bugs conocidos (consolidar en MOC Bug Tracker)
-- API - Endpoints, documentación, contratos
-- Frontend - Vue, React, componentes UI
-- Backend - Django, Node, servicios
-- Negocio - Lógica de negocio, dominio
-- DevOps - Docker, CI/CD, deployment
-- Proyecto - Roadmap, TODOs, progreso
-- Doc - Documentación, guías, manuales
-- Herramienta - Git, IDEs, utilidades
+⚠️ PREFIJO CATEGÓRICO OBLIGATORIO (Categoria - Nombre.md):
 
-CYBERPUNK COLOR SYSTEM - Choose secondary tags:
+Arquitectura - Patrones, estilos arquitectónicos
+BD - Base de datos, PostgreSQL, modelos
+Testing - Tests, estrategias, herramientas
+Seguridad - RLS, XSS, autenticación
+Bug - Bugs conocidos (consolidar en MOC Bug Tracker)
+API - Endpoints, documentación, contratos
+Frontend - Vue, React, componentes UI
+Backend - Django, Node, servicios
+Negocio - Lógica de negocio, dominio
+DevOps - Docker, CI/CD, deployment
+Proyecto - Roadmap, TODOs, progreso
+Doc - Documentación, guías, manuales
+Herramienta - Git, IDEs, utilidades
 
-TIER 2 (Main categories):
-- technical: Lime neon
-- business: Gold neon  
-- tools: Orange neon
+CYBERPUNK COLOR SYSTEM:
+- Tier 2: technical (lime), business (gold), tools (orange)
+- Tier 3: architecture (blue), database (green), frontend (purple), backend (yellow), planning (yellow), testing (pink), implementation (violet), project (white)
 
-TIER 3 (Specific categories):
-- architecture: Electric blue
-- database: Bright green
-- frontend: Purple
-- backend: Yellow
-- planning: Yellow
-- testing: Hot pink
-- implementation: Violet
-- project: White
-
-Examples:
-- [topic, technical, architecture]
-- [topic, technical, database]
-- [topic, testing]
-- [topic, business]
+Example: [topic, technical, architecture] or [topic, testing]
 -->
 
 ## Core Idea
@@ -70,10 +54,13 @@ Examples:
 
 ---
 
-## Related Topics
+## Related Topics (Wiki-Links Requeridos)
+
+🔗 **Mínimo 2-3 links a topics existentes:**
 
 - [[Categoria - Topic Relacionado]]
 - [[Categoria - Otro Topic]]
+- [[Categoria - Tema Conexo]]
 
 ---
 
@@ -90,8 +77,7 @@ Examples:
 
 ---
 
-<!-- Opcional: Links de implementación -->
-## Implementación
+## Implementación (Opcional)
 
 | Aspecto | Status | Referencia |
 |---------|--------|------------|

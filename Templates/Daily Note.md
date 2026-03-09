@@ -5,6 +5,12 @@ date: {{date:YYYY-MM-DD}}
 
 # {{date:YYYY-MM-DD}}
 
+## Session Focus
+
+🎯 **Objetivo principal:** [1-2 líneas del foco del día]
+
+---
+
 ## Resumen Ejecutivo
 
 2-3 líneas máximo describiendo el día.
@@ -29,22 +35,29 @@ date: {{date:YYYY-MM-DD}}
 
 ---
 
-## Logros ✅
+## Completed ✅
 
-- [ ] Logro 1
-- [ ] Logro 2
-- [ ] Logro 3
-
----
-
-## Pendientes ⏳
-
-- [ ] Pendiente 1
-- [ ] Pendiente 2
+- [x] Logro 1
+- [x] Logro 2
+- [x] Logro 3
 
 ---
 
-## Commits / Cambios
+## In Progress 🚧
+
+- [ ] Tarea en curso 1
+- [ ] Tarea en curso 2
+
+---
+
+## Blockers / Issues ❌
+
+- **Bloqueo 1:** Descripción y plan de resolución
+- **Bloqueo 2:** Descripción y plan de resolución
+
+---
+
+## Commits / Changes
 
 ```
 hash tipo(scope): descripción
@@ -55,17 +68,18 @@ hash tipo(scope): descripción
 
 ---
 
-## Conexiones
+## Next Steps 📋
+
+- [ ] Próximo paso 1
+- [ ] Próximo paso 2
+
+---
+
+## Links
 
 - [[MOCs/Fase X - Nombre]]
 - [[Topics/Tema Relacionado]]
 - [[ADR-XXX]]
-
----
-
-## Bloqueos / Problemas
-
-- 
 
 ---
 
