@@ -138,9 +138,74 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Pre-commit hooks prevent broken wiki-links
 - CI/CD validation ensures documentation integrity
 
+## [2.1.0] - 2026-03-08
+
+### Added
+
+#### Academic Research & Data Science Support
+- **20+ New Categorical Prefixes** for research projects:
+  - Mathematics: `Matemática`, `Algoritmo`, `Concepto`, `Teoría`
+  - Research: `Paper`, `Bibliografía`, `Caso`, `Experimento`
+  - Data Science: `Dataset`, `Modelo`, `Métrica`, `Análisis`
+  - Visualization: `Figura`, `Visualización`
+  - Implementation: `Implementación`, `Método`, `Proceso`, `Resultado`
+
+#### New Specialized Skills (7 skills)
+- `paper-analyzer` - Analyze academic papers, extract concepts and methodology
+- `biblio-review` - Bibliographic review, BibTeX validation, identify gaps
+- `latex-tikz-generator` - Generate TikZ/PGF figures following LaTeX 3D course best practices
+- `data-explorer` - Dataset exploration, profiling, quality analysis
+- `experiment-tracker` - ML/DL experiment tracking, metrics, reproducibility
+- `methodology-validator` - Validate scientific methodologies, experimental designs
+- `stats-reviewer` - Statistical review, assumption validation, test selection
+
+#### New Templates for Research (11 templates)
+- `Paper.md` - Academic paper analysis with comprehensive metadata
+- `Concept.md` - Theoretical/mathematical concepts with formal definitions
+- `Case Study.md` - Empirical case studies with triangulation support
+- `Exercise.md` - Academic exercises with difficulty levels
+- `Implementation.md` - Code implementation reviews
+- `Experiment.md` - ML/DL experiment documentation with metrics
+- `Dataset.md` - Dataset documentation with quality assessment
+- `API.md` - API documentation template
+- `Meeting.md` - Meeting notes with action items
+- `Decision.md` - Extended decision records (ADR enhancement)
+- `TikZ Figure.md` - Scientific figures in TikZ/PGF
+
+#### Enhanced Base Skills
+- `vault-reader` - Added 20+ academic research categorical prefixes
+- `vault-writer` - Extended tag system with research categories
+- `paper-analyzer` - Made generic for any research field (not just TDA)
+
+#### TikZ/PGF Integration
+- Best practices from LaTeX 3D Drawing Course integrated:
+  - `\tdplotsetmaincoords` for 3D perspective
+  - `z buffer=sort` for complex surfaces
+  - `tikzmath` for variable definitions
+  - Canvas projections for 2D on 3D planes
+  - Colorblind-friendly color palettes
+
+### Changed
+- **Total Skills**: 4 → 11 (7 new specialized skills)
+- **Total Templates**: 12 → 24 (11 new + 1 updated)
+- Updated template structure to support both software and research projects
+- Enhanced tag system with 3-tier hierarchy (structural, category, specificity)
+
+### Deprecated
+- N/A
+
+### Fixed
+- N/A
+
+### Documentation
+- Updated README.md with version 2.1.0 badge
+- Added comprehensive skill documentation with triggers and workflows
+- Documented 20+ categorical prefixes for Topics/
+- Added cross-references between skills and templates
+
 ## [Unreleased]
 
 ### Planned
-- Research project specializations (academic/scientific workflows)
-- Data Science project specializations (ML/AI experiment tracking)
-- Additional templates for specific use cases
+- Additional domain-specific specializations
+- Integration with external tools (Zotero, Mendeley, etc.)
+- Enhanced CI/CD workflows for research projects
