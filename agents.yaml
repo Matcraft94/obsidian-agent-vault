@@ -1,13 +1,13 @@
-# Agent Configuration for Aurora-GLM
+# Agent Configuration for Obsidian Vault Template
 # FORCE: Vault interaction is MANDATORY
 
 project:
-  name: "Aurora-GLM"
-  type: "Python Statistical Library"
-  description: "GLM, GAM, GAMM with R integration"
+  name: "PROJECT_NAME"
+  type: "PROJECT_TYPE"
+  description: "PROJECT_DESCRIPTION"
   
 vault:
-  path: "D:\WSL-Projects\Obsidian+Claude\Aurora-GLM"
+  path: "VAULT_PATH"
   required: true
   auto_detect: true
   
@@ -18,19 +18,17 @@ vault:
     - "README.md"
     - "CHANGELOG.md"
   
-  # Skills to use for vault interaction
+  # Skills to use for vault interaction (NEW - Local skills)
   skills:
     primary:
-      - "obsidian-vault-querier"    # Query and search
-      - "vault-knowledge"           # Read + Write cycle
-      - "vault-reader"              # Efficient reading
-      - "vault-writer"              # Note creation
-      - "vault-optimizer"           # Structure optimization
+      - "vault-reader"              # Query and read vault efficiently
+      - "vault-writer"              # Create/modify documentation
+      - "vault-daily"               # Create Daily Notes
+      - "vault-commit"              # Commit vault changes
     
     secondary:
-      - "aurora-glm"                # Statistical modeling
-      - "aurora-math"               # Mathematical operations
-      - "aurora-testing"            # Testing strategies
+      - "obsidian-vault-querier"    # Query and search (fallback)
+      - "vault-knowledge"           # Read + Write cycle (fallback)
       - "writing-plans"             # Plan creation
       - "executing-plans"           # Plan execution
 
@@ -40,89 +38,186 @@ workflow:
   pre_work:
     - "Read AGENTS.md from vault"
     - "Check latest Daily Notes"
-    - "Search relevant statistical topics"
+    - "Search relevant topics"
     - "Review Implementation Progress"
+    - "Review lessons learned files"
   
   # DURING work
   during_work:
-    - "Document algorithms in Topics/"
-    - "Link to mathematical concepts"
-    - "Update statistical models MOC"
+    - "Document concepts in Topics/"
+    - "Link to related concepts via wiki-links"
+    - "Update relevant MOCs"
     - "Create Daily Note entries"
+    - "Follow Swarm Protocol for documentation tasks"
   
   # BEFORE commit (CRITICAL)
   pre_commit:
-    - "Document new models in vault"
-    - "Update algorithm topics"
-    - "Add benchmarks to vault"
+    - "Validate wiki-links with ./scripts/validate-links.sh"
+    - "Count tests with ./scripts/count-tests.sh"
+    - "Update relevant Topics"
+    - "Create ADR if architectural decision"
     - "Update Implementation Progress"
     - "Commit vault changes FIRST"
     - "Commit repo changes SECOND"
 
 # Agent Specialization
 agents:
-  vault_querier:
-    role: "Query vault for statistical information"
-    skill: "obsidian-vault-querier"
+  vault_reader:
+    role: "Read and query vault for information"
+    skill: "vault-reader"
     triggers:
+      - "consulta el vault"
       - "busca en el vault"
       - "search vault"
-      - "find model"
-      - "query algorithm"
+      - "find topic"
+      - "query MOC"
+      - "what's the status"
+      - "latest Daily Note"
     
   vault_writer:
-    role: "Write statistical knowledge to vault"
+    role: "Write documentation to vault"
     skill: "vault-writer"
     triggers:
-      - "document model"
-      - "add algorithm"
+      - "document feature"
       - "create topic"
       - "update MOC"
+      - "add ADR"
+      - "write Daily Note"
     
-  statistical_researcher:
-    role: "Research statistical methods"
-    skill: "aurora-glm"
+  vault_daily:
+    role: "Create and manage Daily Notes"
+    skill: "vault-daily"
     triggers:
-      - "GLM"
-      - "GAM"
-      - "GAMM"
-      - "mixed models"
-      - "REML"
+      - "create Daily Note"
+      - "session log"
+      - "daily journal"
+      - "log progress"
+    
+  vault_commit:
+    role: "Commit vault changes to git"
+    skill: "vault-commit"
+    triggers:
+      - "commit vault"
+      - "save vault changes"
+      - "git commit vault"
 
 # Synchronization Rules
 sync:
   repo_to_vault:
-    - event: "new_model"
+    - event: "new_feature"
       action: "Create topic in Topics/"
-    - event: "benchmark_results"
-      action: "Update Performance MOC"
-    - event: "algorithm_implementation"
-      action: "Document in Topics/ + Link to MOC"
+    - event: "architectural_decision"
+      action: "Create ADR in ADRs/"
     - event: "bug_fix"
       action: "Daily Note + BUG topic if critical"
+    - event: "test_results"
+      action: "Update Testing MOC"
+    - event: "api_change"
+      action: "Update API Documentation MOC"
   
   vault_to_repo:
-    - event: "research_algorithm"
+    - event: "research_topic"
       action: "Add to implementation notes"
-    - event: "mathematical_insight"
-      action: "Update docstrings"
+    - event: "design_decision"
+      action: "Update code comments"
     - event: "test_strategy"
       action: "Update test files"
 
-# Statistical Focus Areas
-focus_areas:
-  - "GLM - Generalized Linear Models"
-  - "GAM - Generalized Additive Models"
-  - "GAMM - Generalized Additive Mixed Models"
-  - "REML - Restricted Maximum Likelihood"
-  - "R integration via rpy2"
-  - "Numerical optimization"
+# Swarm Protocol
+swarm:
+  enabled: true
+  min_agents: 3
+  
+  compositions:
+    feature_documentation:
+      agents: ["backend", "frontend", "database", "testing", "vault_keeper"]
+      description: "For documenting new features"
+    
+    verification:
+      agents: ["backend", "database", "architecture", "testing", "api_docs"]
+      description: "For verifying documentation vs code"
+    
+    test_counting:
+      agents: ["backend", "testing"]
+      description: "For counting and verifying tests"
+    
+    architecture_decision:
+      agents: ["backend", "database", "vault_keeper"]
+      description: "For architectural decisions"
+  
+  coordination_protocol:
+    - "Launch all agents simultaneously"
+    - "Each agent works independently on their domain"
+    - "Main agent merges findings into single report"
+    - "Cross-check findings between agents"
+    - "Update vault based on consolidated report ONLY"
+    - "Commit all vault changes together"
 
-# Forbidden Actions
+# Validation Scripts
+scripts:
+  validate_links: "./scripts/validate-links.sh"
+  count_tests: "./scripts/count-tests.sh"
+  quarterly_audit: "./scripts/quarterly-audit.sh"
+  check_structure: "./scripts/check-structure.sh"
+
+# Forbidden Actions (UPDATED)
 forbidden:
   - "Commit without reading vault"
   - "Create duplicate topics"
   - "Leave topics without wiki-links"
   - "Create subfolders in Topics/"
-  - "Skip mathematical documentation"
-  - "Forget to link to related models"
+  - "Skip documentation of decisions"
+  - "Forget to link to related notes"
+  - "Update vault without using swarm (for complex tasks)"
+  - "Mix vault commits with code commits"
+  - "Hardcode test counts or metrics"
+  - "Create wiki-links to non-existent files"
+  - "Mark task complete without verification"
+  - "Skip pre-commit validation"
+
+# Documentation Synchronization Rules
+doc_sync:
+  rules:
+    - name: "Zero Documentation Drift"
+      description: "Before marking ANY task complete"
+      checklist:
+        - "Code implemented and tested"
+        - "Tests actually exist (verified)"
+        - "Wiki-links validated"
+        - "Topics created for new functionality"
+        - "ADRs updated for architectural decisions"
+        - "Test counts verified"
+    
+    - name: "Verify Before Link"
+      description: "Every wiki-link must point to existing file"
+    
+    - name: "Single Source of Truth"
+      description: "Metrics must be generated, not hardcoded"
+    
+    - name: "Decision → ADR First"
+      description: "No architectural decision without prior ADR"
+    
+    - name: "Mandatory Agent Swarm"
+      description: "Min 3 agents for documentation-affecting changes"
+    
+    - name: "Integration Test Mandatory"
+      description: "All new features require integration test"
+
+# CI/CD Integration
+ci_cd:
+  workflows:
+    - name: "docs-validation"
+      file: ".github/workflows/docs-validation.yml"
+      triggers: ["pull_request", "schedule"]
+    
+    - name: "nightly-tests"
+      file: ".github/workflows/nightly-tests.yml"
+      triggers: ["schedule", "workflow_dispatch"]
+  
+  pre_commit:
+    enabled: true
+    config: ".pre-commit-config.yaml"
+    hooks:
+      - "markdownlint"
+      - "validate-links"
+      - "check-structure"
