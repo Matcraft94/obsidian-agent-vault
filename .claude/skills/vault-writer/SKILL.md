@@ -70,6 +70,8 @@ Topics/
 
 ### 2. Prefijos Categóricos Obligatorios
 
+#### Desarrollo de Software
+
 | Categoría | Uso | Ejemplo |
 |-----------|-----|---------|
 | `Arquitectura` | Patrones, estilos arquitectónicos | `Arquitectura - Clean Architecture.md` |
@@ -84,6 +86,31 @@ Topics/
 | `Proyecto` | Roadmap, TODOs | `Proyecto - Roadmap.md` |
 | `Doc` | Documentación, guías | `Doc - Developer Onboarding.md` |
 | `Herramienta` | Git, IDEs | `Herramienta - Git Workflow.md` |
+
+#### Investigación Académica y Data Science
+
+| Categoría | Uso | Ejemplo |
+|-----------|-----|---------|
+| `Matemática` | Conceptos matemáticos | `Matemática - Homología Persistente.md` |
+| `Algoritmo` | Algoritmos específicos | `Algoritmo - Vietoris-Rips.md` |
+| `Software` | Librerías y herramientas | `Software - GUDHI.md` |
+| `Concepto` | Conceptos teóricos | `Concepto - Diagrama de Persistencia.md` |
+| `Bibliografía` | Referencias clave | `Bibliografía - Carlsson 2009.md` |
+| `Implementación` | Código y técnicas | `Implementación - Pipeline Python.md` |
+| `Dataset` | Conjuntos de datos | `Dataset - MNIST.md` |
+| `Método` | Metodologías | `Método - Cross-Validation.md` |
+| `Teoría` | Marcos teóricos | `Teoría - Topología Algebraica.md` |
+| `Aplicación` | Dominios aplicados | `Aplicación - Psicometría.md` |
+| `Paper` | Papers analizados | `Paper - Carlsson 2009 Topology and Data.md` |
+| `Figura` | Figuras científicas | `Figura - Diagrama de Persistencia.md` |
+| `Análisis` | Técnicas analíticas | `Análisis - Análisis Factorial.md` |
+| `Modelo` | Modelos ML/DL | `Modelo - Red Neuronal.md` |
+| `Métrica` | Métricas y medidas | `Métrica - Bottleneck Distance.md` |
+| `Proceso` | Procesos y workflows | `Proceso - Limpieza de Datos.md` |
+| `Resultado` | Resultados de análisis | `Resultado - Experimento 1.md` |
+| `Caso` | Casos de estudio | `Caso - Validación Topológica.md` |
+| `Experimento` | Experimentos ML/DL | `Experimento - Comparación Modelos.md` |
+| `Visualización` | Gráficos y figuras | `Visualización - Heatmap Correlaciones.md` |
 
 ### 3. Frontmatter Requerido
 
@@ -157,7 +184,7 @@ Separación de concerns en capas concéntricas. Domain en el centro, sin depende
 | `business` | Gold | Lógica de negocio |
 | `tools` | Orange | Frameworks/libs |
 
-### Tier 3 - Especificidad
+### Tier 3 - Especificidad (Desarrollo)
 | Tag | Color | Uso |
 |-----|-------|-----|
 | `architecture` | Electric blue | Arquitecturas |
@@ -167,11 +194,35 @@ Separación de concerns en capas concéntricas. Domain en el centro, sin depende
 | `testing` | Hot pink | Testing |
 | `implementation` | Violet | Implementación |
 
+### Tier 3 - Especificidad (Investigación)
+| Tag | Color | Uso |
+|-----|-------|-----|
+| `mathematics` | Electric blue | Matemáticas |
+| `algorithm` | Bright green | Algoritmos |
+| `software` | Purple | Software/Librerías |
+| `concept` | Yellow | Conceptos teóricos |
+| `bibliography` | Gold | Bibliografía |
+| `dataset` | Hot pink | Datasets |
+| `method` | Violet | Metodologías |
+| `theory` | Cyan | Teorías |
+| `application` | Orange | Aplicaciones |
+| `paper` | Magenta | Papers |
+| `figure` | Lime | Figuras |
+| `analysis` | Turquoise | Análisis |
+| `model` | Pink | Modelos ML |
+| `metric` | Coral | Métricas |
+| `experiment` | Navy | Experimentos |
+| `visualization` | Teal | Visualizaciones |
+
 **Auto-tagging por tipo**:
 - Topics de arquitectura → `[topic, technical, architecture]`
 - Topics de BD → `[topic, technical, database]`
 - Topics de frontend → `[topic, technical, frontend]`
 - Topics de backend → `[topic, technical, backend]`
+- Topics matemáticos → `[topic, mathematics, technical]`
+- Topics de papers → `[topic, paper, bibliography]`
+- Topics de datasets → `[topic, dataset, analysis]`
+- Topics de métodos → `[topic, method, technical]`
 
 ## Plantillas
 

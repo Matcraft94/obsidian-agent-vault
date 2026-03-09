@@ -59,11 +59,16 @@ Cuando el usuario hace una pregunta sobre el proyecto, seguir este orden:
 
 ### Topics
 - **Formato**: `Categoria - Nombre.md`
-- **Categorías**: Arquitectura, BD, Testing, Seguridad, API, Frontend, Backend, Negocio, DevOps, Proyecto, Doc, Herramienta
-- **Ejemplos**:
+- **Categorías Software**: Arquitectura, BD, Testing, Seguridad, API, Frontend, Backend, Negocio, DevOps, Proyecto, Doc, Herramienta
+- **Categorías Investigación**: Matemática, Algoritmo, Software, Concepto, Bibliografía, Implementación, Dataset, Método, Teoría, Aplicación, Paper, Figura, Análisis, Modelo, Métrica, Proceso, Resultado, Caso, Experimento, Visualización
+- **Ejemplos Software**:
   - `Arquitectura - Clean Architecture.md`
   - `BD - PostgreSQL.md`
   - `Testing - E2E Suite.md`
+- **Ejemplos Investigación**:
+  - `Matemática - Homología Persistente.md`
+  - `Paper - Carlsson 2009 Topology and Data.md`
+  - `Dataset - MNIST.md`
 
 ### ADRs
 - **Formato**: `ADR-XXX Descripcion Breve.md`
