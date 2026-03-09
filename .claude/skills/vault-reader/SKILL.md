@@ -66,6 +66,10 @@ Cuando el usuario hace una pregunta sobre el proyecto, seguir este orden:
   - `BD - PostgreSQL.md`
   - `Testing - E2E Suite.md`
 - **Ejemplos Investigación**:
+  - `Matemática - Álgebra Lineal.md`
+  - `Paper - LeCun 2015 Deep Learning.md`
+  - `Dataset - MNIST.md`
+- **Ejemplos Investigación**:
   - `Matemática - Homología Persistente.md`
   - `Paper - Carlsson 2009 Topology and Data.md`
   - `Dataset - MNIST.md`

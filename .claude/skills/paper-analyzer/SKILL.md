@@ -121,22 +121,30 @@ Ejemplos:
 ```markdown
 ---
 cssclass: paper-note
-tags: [paper, #tema, #capitulo_n]
-authors: ["Autor 1", "Autor 2"]
-year: 2023
-venue: "Conference/Journal"
-priority: #essential|recommended|optional
-status: #procesado|en_revision|cited
-citas_en_monografia: []
+tags: [paper, bibliography, research]
+authors: []
+year:
+venue: ""
+doi: ""
+url: ""
+priority: essential
+status: procesado
+citas_en_documento: []
+created: YYYY-MM-DD
+modified: YYYY-MM-DD
 ---
 
 # Título del Paper
 
 ## Metadata
-- **Autores:** Autor 1, Autor 2
-- **Año:** 2023
-- **Venue:** Nombre del Venue
-- **DOI:** 10.xxxx/xxxxx
+- **Autores:** 
+- **Año:** 
+- **Venue:** 
+- **DOI:** 
+- **URL:** 
+- **Citas:** (Google Scholar)
+- **Código:** (si disponible)
+- **Datos:** (si disponible)
 
 ## Resumen
 
@@ -144,51 +152,67 @@ citas_en_monografia: []
 
 ## Contribuciones Principales
 
-1. Contribución clave 1
-2. Contribución clave 2
-3. Contribución clave 3
+1. Contribución clave 1 (1-2 líneas)
+2. Contribución clave 2 (1-2 líneas)
+3. Contribución clave 3 (1-2 líneas)
 
 ## Conceptos Clave
 
-- [[Concepto Relacionado 1]]: Definición extraída
-- [[Concepto Relacionado 2]]: Definición extraída
+- [[Concepto 1]]: Definición o explicación breve
+- [[Concepto 2]]: Definición o explicación breve
+- [[Concepto 3]]: Definición o explicación breve
 
 ## Metodología
 
 ### Datos
-- Dataset: Nombre
-- Tamaño: n=...
-- Características: ...
+- **Dataset:** Nombre
+- **Tamaño:** n=...
+- **Características:** ...
 
 ### Métodos
 - Algoritmo/prueba utilizada
 - Parámetros clave
+- Diseño experimental
 
 ## Resultados
 
-| Métrica | Valor | Baseline |
-|---------|-------|----------|
-| Métrica 1 | X% | Y% |
-| Métrica 2 | A | B |
+| Métrica | Valor | Baseline | Notas |
+|---------|-------|----------|-------|
+| Métrica 1 | X% | Y% | ... |
+| Métrica 2 | A | B | ... |
+
+### Hallazgos Principales
+
+1. Hallazgo 1 (1-2 líneas)
+2. Hallazgo 2 (1-2 líneas)
+3. Hallazgo 3 (1-2 líneas)
 
 ## Limitaciones
 
-- Limitación 1
+- Limitación 1 (mencionada por autores o identificada)
 - Limitación 2
 
-## Relación con la Investigación
+## Relación con el Proyecto
 
-- Aplicable a: [[Tema de investigación]]
-- Posibles citas en: [[Capítulo relacionado]]
-- Conceptos a integrar: [[Concepto nuevo]]
+- **Aplicable a:** [[Tema de investigación]]
+- **Posibles citas en:** [[Sección relacionada]]
+- **Conceptos a integrar:** [[Concepto nuevo]]
+- **Comparación con:** [[Paper similar]]
 
 ## Citas y Referencias
-- [[Paper Relacionado 1]]
-- [[Paper Relacionado 2]]
+
+- [[Paper Relacionado 1]] - Relación: ...
+- [[Paper Relacionado 2]] - Relación: ...
+- [[Paper citado]] - Contenido relevante
 
 ## Notas Adicionales
 
-Espacio para notas personales.
+- Notas personales sobre el paper
+- Ideas para futuro
+- Conexiones descubiertas
+
+---
+*Procesado: YYYY-MM-DD*
 ```
 
 ## Sistema de Prioridad

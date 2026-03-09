@@ -1,6 +1,6 @@
 ---
 title: Vault Writer
-description: Crea y modifica documentación en el vault siguiendo convenciones estrictas
+description: Crea y modifica documentación en el vault siguiendo convenciones estrictas para proyectos de investigación y desarrollo
 triggers:
   - crear documentación
   - modificar vault
@@ -60,8 +60,9 @@ Crear y modificar documentación en el vault siguiendo **convenciones estrictas*
 Topics/
 ├── Arquitectura - Clean Architecture.md      ✓
 ├── Arquitectura - Hexagonal.md               ✓
-├── BD - PostgreSQL.md                        ✓
-├── Testing - E2E Suite.md                    ✓
+├── Matemática - Álgebra Lineal.md            ✓
+├── Paper - Autor 2023 Título.md              ✓
+├── Dataset - MNIST.md                        ✓
 ├── Testing/
 │   └── Unit Tests.md                         ✗ NUNCA
 ```
@@ -91,39 +92,39 @@ Topics/
 
 | Categoría | Uso | Ejemplo |
 |-----------|-----|---------|
-| `Matemática` | Conceptos matemáticos | `Matemática - Homología Persistente.md` |
-| `Algoritmo` | Algoritmos específicos | `Algoritmo - Vietoris-Rips.md` |
-| `Software` | Librerías y herramientas | `Software - GUDHI.md` |
-| `Concepto` | Conceptos teóricos | `Concepto - Diagrama de Persistencia.md` |
-| `Bibliografía` | Referencias clave | `Bibliografía - Carlsson 2009.md` |
-| `Implementación` | Código y técnicas | `Implementación - Pipeline Python.md` |
+| `Matemática` | Conceptos matemáticos | `Matemática - Álgebra Lineal.md` |
+| `Algoritmo` | Algoritmos específicos | `Algoritmo - Gradient Descent.md` |
+| `Software` | Librerías y herramientas | `Software - TensorFlow.md` |
+| `Concepto` | Conceptos teóricos | `Concepto - Entropía.md` |
+| `Bibliografía` | Referencias clave | `Bibliografía - LeCun 2015.md` |
+| `Implementación` | Código y técnicas | `Implementación - Pipeline ML.md` |
 | `Dataset` | Conjuntos de datos | `Dataset - MNIST.md` |
 | `Método` | Metodologías | `Método - Cross-Validation.md` |
-| `Teoría` | Marcos teóricos | `Teoría - Topología Algebraica.md` |
-| `Aplicación` | Dominios aplicados | `Aplicación - Psicometría.md` |
-| `Paper` | Papers analizados | `Paper - Carlsson 2009 Topology and Data.md` |
-| `Figura` | Figuras científicas | `Figura - Diagrama de Persistencia.md` |
+| `Teoría` | Marcos teóricos | `Teoría - Teoría de Grafos.md` |
+| `Aplicación` | Dominios aplicados | `Aplicación - Visión Computacional.md` |
+| `Paper` | Papers analizados | `Paper - LeCun 2015 Deep Learning.md` |
+| `Figura` | Figuras científicas | `Figura - Arquitectura Red Neuronal.md` |
 | `Análisis` | Técnicas analíticas | `Análisis - Análisis Factorial.md` |
-| `Modelo` | Modelos ML/DL | `Modelo - Red Neuronal.md` |
-| `Métrica` | Métricas y medidas | `Métrica - Bottleneck Distance.md` |
+| `Modelo` | Modelos ML/DL | `Modelo - ResNet.md` |
+| `Métrica` | Métricas y medidas | `Métrica - F1-Score.md` |
 | `Proceso` | Procesos y workflows | `Proceso - Limpieza de Datos.md` |
 | `Resultado` | Resultados de análisis | `Resultado - Experimento 1.md` |
-| `Caso` | Casos de estudio | `Caso - Validación Topológica.md` |
-| `Experimento` | Experimentos ML/DL | `Experimento - Comparación Modelos.md` |
-| `Visualización` | Gráficos y figuras | `Visualización - Heatmap Correlaciones.md` |
+| `Caso` | Casos de estudio | `Caso - Clasificación Imágenes Médicas.md` |
+| `Experimento` | Experimentos ML/DL | `Experimento - Comparación Optimizadores.md` |
+| `Visualización` | Gráficos y figuras | `Visualización - Heatmap.md` |
 
 ### 3. Frontmatter Requerido
 
 ```yaml
 ---
-title: "Arquitectura - Clean Architecture"
-description: "Principios y aplicación de Clean Architecture en el proyecto"
-created: 2026-03-08
-modified: 2026-03-08
+title: "Categoria - Nombre del Tema"
+description: "Breve descripción del tema"
+created: YYYY-MM-DD
+modified: YYYY-MM-DD
 tags:
   - topic
-  - technical
-  - architecture
+  - category
+  - specific-tag
 ---
 ```
 
@@ -183,6 +184,8 @@ Separación de concerns en capas concéntricas. Domain en el centro, sin depende
 | `technical` | Lime | Conceptos técnicos |
 | `business` | Gold | Lógica de negocio |
 | `tools` | Orange | Frameworks/libs |
+| `research` | Blue | Investigación |
+| `data` | Green | Datos/Datasets |
 
 ### Tier 3 - Especificidad (Desarrollo)
 | Tag | Color | Uso |
@@ -282,7 +285,7 @@ tags:
   - adr
   - technical
   - architecture
-status: accepted
+status: proposed
 ---
 
 # ADR-XXX: Título de la Decisión
